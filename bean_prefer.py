@@ -134,8 +134,7 @@ else:
         predicted_cafe = brand_names[cafe_prediction]
         st.session_state.recommended_beans = recommend_beans(predicted_cafe)
 
-        if st.session_state.recommended_beans:
-            for i, bean in enumerate(st.session_state.recommended_beans, start=1):
-                st.write(f"{i}. {bean}")
-            evaluate_recommendations(predicted_cafe)
+        for i, bean in enumerate(st.session_state.recommended_beans, start=1):
+            st.write(f"{i}. {bean}")
+        evaluate_recommendations(predicted_cafe)
 
